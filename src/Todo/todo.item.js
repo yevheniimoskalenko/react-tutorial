@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-function TodoItem({ todo, index }) {
+function TodoItem({ todo, index, onChange }) {
+  console.log(todo);
   const styles = {
     li: {
       display: 'flex',
@@ -18,7 +19,7 @@ function TodoItem({ todo, index }) {
   return (
     <li style={styles.li}>
       <span>
-        <input type="checkbox" style={styles.input} />
+        <input type="checkbox" style={styles.input} onChange={() => onChange(todo.id)} />
         <strong>{index + 1}</strong>
         {todo.title}
       </span>
@@ -30,6 +31,7 @@ function TodoItem({ todo, index }) {
 TodoItem.propTypes = {
   todo: PropTypes.object,
   index: PropTypes.number,
+  onChange: PropTypes.func.isRequired,
 };
 
 export default TodoItem;
