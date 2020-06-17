@@ -4,6 +4,8 @@ import TodoItem from './todo.item';
 const styles = {
   ul: {
     listStyle: 'none',
+    margin: 0,
+    padding: 0,
   },
 };
 function TodoList(props) {
